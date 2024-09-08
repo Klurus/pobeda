@@ -1,0 +1,28 @@
+dnf install proftpd
+dnf install proftpd-utils
+#Запуск сервиса proftpd и добавление его в автозагрузку
+systemctl enable --now proftpd
+#Для активации анонимного доступа необходимо добавьте параметр PROFTPD_OPTIONS="-DANONYMOUS_FTP" в
+файл /etc/sysconfig/proftpd.
+vi /etc/sysconfig/proftpd
+#Добавляем ложную оболочку /sbin/nologin в файл списка оболочек /etc/shells.
+echo /sbin/nologin >> /etc/shells
+#Перезапускаем службу proftpd для применения настроек
+systemctl restart proftpd
+mkdir -p /srv/routers-conf
+chown ftp:ftp /srv/routers-conf
+chmod 700 /srv/routers-conf
+usermod -d /srv/routers-conf ftp
+vi /etc/proftpd/anonftp.conf
+AllowAll
+#Перезапускаем службу proftpd для применения настроек
+systemctl restart proftpd
+
+
+confgure
+archive
+path ftp://192.168.33.2:/$H-$T
+time-period 10080
+auto
+by-commit
+exit
