@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Backup Timer
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=24h
+AccuracySec=1s
+Unit=backup.service
+Persistent=true
+[Install]
+WantedBy=timers.target
