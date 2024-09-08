@@ -1,0 +1,25 @@
+server {
+    listen 80;
+    server_name monitoring.au.team;
+
+    location / {
+        proxy_pass http://SRV2-DT:3000;  # Порт, на котором работает Grafana
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+
+server {
+    listen 80;
+    server_name zabbix.au.team;
+
+    location / {
+        proxy_pass http://SRV3-DT/zabbix;  # Путь к Zabbix
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
