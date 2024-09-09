@@ -18,3 +18,7 @@ R-DT(config)#ip nat source static tcp 192.168.33.3 80 172.16.4.14 80
 ![image](https://github.com/user-attachments/assets/9d10d541-9c5c-47ac-af0c-2d54c0ca680f)
 
 ![image](https://github.com/user-attachments/assets/ec01b20e-1143-4b30-b65d-cd6e24079db2)
+
+![image](https://github.com/user-attachments/assets/b78597bb-dea7-46de-a83d-7ba83c1bbae3)
+
+![image](https://github.com/user-attachments/assets/e569a616-26e8-4006-9ddb-265b5d1c7169)
