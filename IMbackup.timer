@@ -1,0 +1,17 @@
+[Unit]
+Description=Creating /home/user backup
+After=default.target
+[Service]
+Type=oneshot
+ExecStart=/home/user/mybackupscript
+[Install]
+WantedBy=default.target
+
+
+[Unit]
+Description=Timer for my backup service
+[Timer]
+OnCalendar=*-*-* 20:00:00
+Persistent=true
+[Install]
+WantedBy=timers.target
