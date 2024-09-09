@@ -12,3 +12,7 @@ docker push localhost:5000/web:1.0
 docker run -d --name web -p 80:80 --restart=always localhost:5000/web:1.0
 
 R-DT(config)#ip nat source static tcp 192.168.33.3 80 172.16.4.14 80
+
+![image](https://github.com/user-attachments/assets/532893fe-a1db-4836-8e84-2ca3455ea550)
+
+![image](https://github.com/user-attachments/assets/9d10d541-9c5c-47ac-af0c-2d54c0ca680f)
