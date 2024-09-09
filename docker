@@ -19,3 +19,14 @@ index.html - из задания
 
 vpn
 dnf install wireguard-tools
+wg genkey | tee /etc/wireguard/privatekey | wg pubkey | tee /etc/wireguard/publickey
+chmod 600 /etc/wireguard/privatekey
+wg genkey | tee /etc/wireguard/cli_privatekey | wg pubkey | tee /etc/wireguard/cli_publickey
+vi /etc/wireguard/wg0.conf
+systemctl enable --now wg-quick@wg0
+R-DT(config)#ip nat source static udp 192.168.33.4 51820 172.16.4.14 51820
+R-DT(config)#ip route 10.6.6.0/24 192.168.33.4
+apt-get install wireguard-tools-wg-quick
+#Настраиваем конфигурационный файл интерфейса для wireguard. (В нашем случае, имя интерфейса будет wg0)
+mkdir /etc/wireguard
+vim /etc/wireguard/wg0.conf
