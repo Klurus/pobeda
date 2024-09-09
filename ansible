@@ -12,3 +12,6 @@ enable
 tunnel GRE 1
 ip ospf instance 1
 ip ospf 
+
+
+ovs-vsctl set bridge ovs0 other_config:rstp-priority=4096
