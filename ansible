@@ -1,1 +1,14 @@
+router ospf 1
+network 100.101.11.0/26 area 0.0.0.0
+network 100.101.11.65/28
+passive
 
+
+router ospf 1
+area 0.0.0.0
+network 100.101.11.0/26 
+enable
+enable
+tunnel GRE 1
+ip ospf instance 1
+ip ospf 
