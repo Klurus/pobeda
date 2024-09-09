@@ -1,0 +1,21 @@
+Dockerfile
+#Развертываем приложение NGINX на базе Alpine
+FROM nginx:alpine
+#Заменяем дефолтную страницу nginx своей
+RUN rm -rf /usr/share/nginx/html/*
+
+COPY ./index.html /usr/share/nginx/html
+#Добавляем конфигурационный файл для нашего web приложения
+COPY ./web.conf /etc/nginx/conf.d/web.conf
+#Указываем на необходимость открыть порт
+EXPOSE 80
+#Переводит Nginx «на передний план» (если этого не сделать, контейнер остановится сразу после запуска)
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+
+index.html - из задания
+
+
+
+vpn
+dnf install wireguard-tools
