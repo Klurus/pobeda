@@ -22,3 +22,12 @@ R-DT(config)#ip nat source static tcp 192.168.33.3 80 172.16.4.14 80
 ![image](https://github.com/user-attachments/assets/b78597bb-dea7-46de-a83d-7ba83c1bbae3)
 
 ![image](https://github.com/user-attachments/assets/e569a616-26e8-4006-9ddb-265b5d1c7169)
+
+
+vim /etc/vsftpd.conf
+yes
+yes
+022
+
+vim /etc/xinetd.conf
+from (eco)
